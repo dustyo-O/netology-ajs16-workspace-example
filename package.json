@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "browser-sync start --ss './src' --port 8080 -w './src'",
+    "start": "browser-sync start --ss './dist' --port 8080 -w './dist'",
+    "build": "babel ./src -d ./dist && cp ./src/index.html ./dist && cp ./node_modules/mini.css/dist/mini-default.min.css ./dist",
     "lint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,9 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "core-js": "^3.14.0",
     "mini.css": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
     "browser-sync": "^2.26.14",
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",

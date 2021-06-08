@@ -1,11 +1,9 @@
-function question() {
-  const x = prompt('Вопрос?');
+const x = () => Math.random()
 
-  if (Number(x)) {
-    console.log('Это было число');
-  } else {
-    console.log('Это, похоже, не было числом (но это не точно)');
+class Test {
+  constructor() {
+    console.log(x())
   }
 }
 
-question();
+window.test = new Test()
